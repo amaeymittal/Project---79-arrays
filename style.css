@@ -1,0 +1,18 @@
+body{
+    text-align:center;
+}
+h3{
+    margin-top:50px; 
+    margin-bottom:50px;
+}
+#sortbtn{
+    display:none;
+}
+
+input,span{
+    margin-bottom:20px;
+}
+
+#display_answer{
+    margin-bottom:5px;
+}
