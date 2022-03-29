@@ -1,27 +1,36 @@
-var students = [];
-function submit(){
-    var one = document.getElementById("student-1").value;
-    var two = document.getElementById("student-2").value;
-    var three = document.getElementById("student-3").value;
-    var four = document.getElementById("student-4").value;
+menu_list_array = ["Veg Margherita Pizza",
+                        "Chicken Tandoori Pizza",
+                        "Veg Supreme Pizza",
+                        "Paneer Tikka Pizza",
+                        "Deluxe Veggie Pizza",
+                        "Veg Extravaganza Pizza"];
+    
+    function getmenu(){
+        var htmldata="";
+        menu_list_array.sort();
+        for(var i=0;i<menu_list_array.length;i++){
+            htmldata=htmldata+ menu_list_array[i] + '<br>'
+        }
+        document.getElementById("display_menu").innerHTML = htmldata;
+        //give the appropriate id name as display_menu 
+    }
 
-    students.push(one);
-    students.push(two);
-    students.push(three);
-    students.push(four);
+    function add_item(){
+        var htmldata;
+		var imgtags='<img id="im1" src="pizzaImg.png">'
+        var item=document.getElementById("add_item").value;
+        menu_list_array.sort();
+        // use the sort function as - menu_list_array.sort();
+        htmldata="";
+        for(var i=0;i<menu_list_array.length;i++){
+            htmldata=htmldata+imgtags+ menu_list_array[i]+'<br>';
+        }
+         document.getElementById("display_addedmenu").innerHTML = htmldata;
+		
+    }
 
-    console.log(students);
-    document.getElementById("display_answer").innerHTML = students;
-
-    document.getElementById("submitbtn").style.display = "none";
-    document.getElementById("sortbtn").style.display = "inline-block";
-
-}
-
-function sort(){
-    students.sort()
-    console.log(students);
-    document.getElementById("display_answer").innerHTML = students;
-    document.getElementById("submitbtn").style.display = "inline-block";
-    document.getElementById("sortbtn").style.display = "block";
+function add_top(){
+	var item=document.getElementById("add_item").value;
+    menu_list_array.push(item);
+	add_item();
 }
